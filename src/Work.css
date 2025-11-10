@@ -1,0 +1,58 @@
+.work_section {
+    width: 90%;
+    margin: auto;
+    font-weight: normal;
+}
+
+.title {
+    font-size: 80px;
+    color: #dad14a;
+}
+
+.description {
+    width: 100%;
+    font-size: 24px;
+}
+
+.detailes {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 120px;
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.date {
+    font-size: 15px;
+    margin-top: 0px
+}
+
+.detailes-photo {
+    font-size: 20px;
+    width: 100%
+}
+
+.work-info {
+    max-width: 300px;
+}
+
+@media (max-width:750px) {
+    .detailes {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .work-info {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .detailes-photo {}
+
+    .photo-work {
+        width: 100%;
+    }
+}

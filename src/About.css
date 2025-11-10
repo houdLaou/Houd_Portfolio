@@ -1,0 +1,22 @@
+.About-section{
+    width:90%;
+    margin:auto;
+    margin-top:150px;
+    font-weight: normal; 
+}
+.title{
+    font-size:80px;
+    color: #dad14a;
+}
+.description{
+    width:100vw;
+    font-size:24px;
+}
+.Detailes{
+    font-size:25px;
+    margin-top: 50px;
+    margin: auto;
+}
+.detaile{
+    margin-top:30px;
+}

@@ -1,0 +1,80 @@
+.Component_section{
+    display:flex;
+    width:90%;
+    margin:auto;
+    padding-top:70px;
+    align-items:center;
+    justify-content:space-between;
+    font-weight: normal; /* make text normal weight */
+
+}
+.Description{
+    line-height:5px;
+    position:relative;
+    font-size: 24px;
+}
+.Product_Designer{
+    line-height:25px;
+    font-size:40px
+}
+.Block{
+    height:70px;
+    width:165px;
+    border-radius:7px;
+    border:2px solid #000000;
+    position: absolute;
+    bottom:7px;
+    left:-10px;
+    transition:0.1s;
+    align-content:center;
+}
+.Photo_Profile{
+    width: 300px;
+    border-radius: 50%;
+}
+.Photos{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    position:relative
+}
+.Photo_top{
+    position:absolute;
+    right:50px;
+}
+.photo_bottom{
+    position: absolute;
+    right:230px;
+    bottom: 30px;
+}
+.Resume{
+    height:70px;
+    width:165px;
+    font-size: 24px;
+    background-color:#F5EE84;
+    margin-top:70px;
+    border-radius:7px;
+    text-align:center
+}
+
+.Block:hover{
+    left: 0px;
+    bottom: 0px;
+    cursor: pointer;
+}
+.Resume:hover .Block{
+    left: 0px;
+    bottom: 0px;
+    cursor: pointer;
+}
+@media (max-width:750px){
+    .Component_section{
+        flex-direction: column-reverse;
+        width: 90%;
+        align-items: flex-start;
+    }
+    .Photos{
+        align-self: center;
+    }
+    
+}

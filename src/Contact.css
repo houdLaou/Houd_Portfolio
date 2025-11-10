@@ -1,0 +1,24 @@
+.contact_section{
+    width:100%;
+    margin:auto;
+    margin-top:150px;
+    font-weight: normal;
+    background-color: rgb(215, 161, 13); 
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contact_info{
+    width: 70%;
+    margin-top: 20px;
+    padding-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+a{
+    color: black;
+}
