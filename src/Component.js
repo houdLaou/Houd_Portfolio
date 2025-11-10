@@ -12,9 +12,9 @@ export default function Component(){
                 <div className="Resume"><div className="Block">Resume</div></div>
             </div>
             <div className='Photos' >
-                <img src="Photo_profile.jpg" className='Photo_Profile'></img>
-                <img src="Group 10.png" className='Photo_top' ></img>
-                <img src="Group 6.png" className='photo_bottom'></img>
+                <img src="Photo_profile.jpg" className='Photo_Profile' alt="Portfolio project screenshot"></img>
+                <img src="Group 10.png" className='Photo_top' alt=''></img>
+                <img src="Group 6.png" className='photo_bottom' alt=''></img>
             </div>
         </div>
     )
