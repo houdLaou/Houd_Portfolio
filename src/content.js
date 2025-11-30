@@ -11,13 +11,6 @@ export default function content(){
                     <a href='#work' style={{color:"black",textDecoration:"none"}}><p>Work</p></a>
                     <a href='#contact' style={{color:"black",textDecoration:"none"}}><p>contact</p></a>
                 </div>
-                {/* <div className='images_app'>
-                    <div className='images'>
-                        <img src='medium-4 1.png'></img>
-                        <img src='behance-2 1.png'></img>
-                        <img src='twitter-6 1.png'></img>
-                    </div>
-                </div> */}
             </div>
         </div>
     )
