@@ -1,4 +1,4 @@
-import './component.css'
+import './Profile.css'
 export default function Component(){
     return(
         <div id='home' className='Component_section' >

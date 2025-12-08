@@ -1,6 +1,6 @@
 
 import './App.css';
-import Component from './Component';
+import Component from './Profile';
 import About from './About';
 import Work from './Work';
 import Contact from "./Contact";
