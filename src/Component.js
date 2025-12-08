@@ -9,7 +9,7 @@ export default function Component(){
                     <h1>Designer</h1>
                 </div>
                 based in Algeria
-                <div className="Resume"><div className="Block">Resume</div></div>
+                <div className="Resume"><a href='#about'><div className="Block">Resume</div></a></div>
             </div>
             <div className='Photos' >
                 <img src="Photo_profile.jpg" className='Photo_Profile' alt="Portfolio project screenshot"></img>

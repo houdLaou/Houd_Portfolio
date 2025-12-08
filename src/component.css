@@ -6,7 +6,7 @@
     align-items:center;
     justify-content:space-between;
     font-weight: normal; /* make text normal weight */
-
+    margin-top: 120px;
 }
 .Description{
     line-height:5px;
@@ -54,7 +54,7 @@
     background-color:#F5EE84;
     margin-top:70px;
     border-radius:7px;
-    text-align:center
+    text-align:center;
 }
 
 .Block:hover{

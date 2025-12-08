@@ -1,6 +1,5 @@
 
 import './App.css';
-import Content from './content';
 import Component from './Component';
 import About from './About';
 import Work from './Work';
@@ -11,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-          <Navbar/>git 
+          <Navbar/>
           <Component/>
           <About/>
           <Work/>

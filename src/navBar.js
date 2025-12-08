@@ -1,104 +1,118 @@
-import React, { useState } from "react";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import MenuIcon from "@mui/icons-material/Menu";
-import Drawer from "@mui/material/Drawer";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-import './content.css'
+import React, { useState, useEffect, useRef } from "react";
+import "./navbar.css";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("#home");
+  const [scrolled, setScrolled] = useState(false);
+  const menuRef = useRef(null);
 
-  const toggleDrawer = (state) => () => {
-    setOpen(state);
+  const navLinks = [
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "Work", href: "#work" },
+    { label: "Contact", href: "#contact" },
+  ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+
+      navLinks.forEach((link) => {
+        const section = document.querySelector(link.href);
+        if (section) {
+          const top = section.offsetTop - 80;
+          const bottom = top + section.offsetHeight;
+          if (window.scrollY >= top && window.scrollY < bottom) {
+            setActiveLink(link.href);
+          }
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        !event.target.closest(".menu-btn")
+      ) {
+        setMenuOpen(false);
+      }
+    };
+
+    if (menuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [menuOpen]);
+
+  const handleLinkClick = (href) => {
+    const section = document.querySelector(href);
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop - 70,
+        behavior: "smooth",
+      });
+    }
+    setMenuOpen(false);
   };
 
   return (
-    <>
-      <AppBar position="static" className="Content-body-up" sx={{ backgroundColor: 'rgb(215, 161, 13)' }}>
-        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Typography variant="h6" sx={{color:"#03045E"}}>
-            <h3>Houd Laouaoudja</h3>
-          </Typography>
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+      <div className="navbar-container">
+        <h2 className="navbar-logo">Houd Laouaoudja</h2>
 
-          <IconButton className="buttonMenu"
-            edge="end"
-            color="inherit"
-            aria-label="menu"
-            onClick={toggleDrawer(true)}
-          >
-            <MenuIcon className="buttonMenu"/>
-          </IconButton>
-          <div className='nav-links' style={{display:""}}>
-            <a href='#home' style={{color:"black",textDecoration:"none"}}><p>Home</p></a>
-            <a href='#about' style={{color:"black",textDecoration:"none"}}><p>About</p></a>
-            <a href='#work' style={{color:"black",textDecoration:"none"}}><p>Work</p></a>
-            <a href='#contact' style={{color:"black",textDecoration:"none"}}><p>contact</p></a>
-          </div>
-        </Toolbar>
-      </AppBar>
+        <div className="nav-links">
+          {navLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className={activeLink === link.href ? "active" : ""}
+              onClick={(e) => {
+                e.preventDefault();
+                handleLinkClick(link.href);
+              }}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
 
-      <Drawer
-        anchor="right"
-        open={open}
-        onClose={toggleDrawer(false)}
-        PaperProps={{
-          sx: {
-            width: 120,       
-            height: "auto",   
-            top: "11%",  
-            borderRadius: "10px 0 0 10px", 
-          }
-        }}
-        ModalProps={{
-          keepMounted: true,
-          BackdropProps: { invisible: true}
-        }}
-      >
-        <Box
-          sx={{
-            height: 160,        
-            overflow: "auto",
-            padding: 1,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-around"
-          }}
+        <button
+          className={`menu-btn ${menuOpen ? "open" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
         >
-          <List>
-            <ListItem disablePadding>
-              <ListItemButton component="a" href="#home">
-                <ListItemText primary="Home" />
-              </ListItemButton>
-            </ListItem>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
 
-
-            <ListItem disablePadding>
-              <ListItemButton component="a" href="#about">
-                <ListItemText primary="About" />
-              </ListItemButton>
-            </ListItem>
-
-            <ListItem disablePadding>
-              <ListItemButton component="a" href="#work">
-                <ListItemText primary="Work" />
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton component="a" href="#contact">
-                <ListItemText primary="Contact" />
-              </ListItemButton>
-            </ListItem>
-          </List>
-        </Box>
-      </Drawer>
-    </>
+      <div ref={menuRef} className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+        <div className="mobile-separator"></div>
+        {navLinks.map((link, idx) => (
+          <a
+            key={link.label}
+            href={link.href}
+            style={{ transitionDelay: `${idx * 0.1}s` }}
+            className={activeLink === link.href ? "active" : ""}
+            onClick={(e) => {
+              e.preventDefault();
+              handleLinkClick(link.href);
+            }}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </nav>
   );
 }

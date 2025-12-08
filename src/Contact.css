@@ -22,3 +22,9 @@
 a{
     color: black;
 }
+@media (max-width:590px){
+    .paragraph{
+        width: 90%;
+    }
+    
+}
