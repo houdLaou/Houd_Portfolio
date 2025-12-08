@@ -1,10 +1,10 @@
 
 import './App.css';
-import Component from './Profile';
-import About from './About';
-import Work from './Work';
-import Contact from "./Contact";
-import Navbar from './navBar'
+import Component from './components/Profile';
+import About from './components/About';
+import Work from './components/Work';
+import Contact from "./components/Contact";
+import Navbar from './components/navBar'
 
 function App() {
   return (
