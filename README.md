@@ -40,3 +40,8 @@ Built with **React.js**, it features a modern, responsive design.
   npm start
 5-Open http://localhost:3000
  in your browser.
+
+📄 License
+
+This project is licensed under the MIT License – see the LICENSE
+ file for details.
