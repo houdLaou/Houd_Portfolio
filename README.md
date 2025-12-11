@@ -1,4 +1,4 @@
-# Houd Laouaja – Personal Portfolio
+# Houd Laouaoudja – Personal Portfolio
 
 ![Portfolio Badge](https://img.shields.io/badge/Portfolio-React-blue?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
