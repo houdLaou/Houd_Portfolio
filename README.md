@@ -28,7 +28,7 @@ Built with **React.js**, it features a modern, responsive design.
 
 ---
 
-💻 Installation & Setup
+## 💻 Installation & Setup
 
 1-Clone the repository:
   git clone https://github.com/houdLaou/Houd_Portfolio.git
@@ -41,7 +41,7 @@ Built with **React.js**, it features a modern, responsive design.
 5-Open http://localhost:3000
  in your browser.
 
-📄 License
+## 📄 License
 
 This project is licensed under the MIT License – see the LICENSE
  file for details.
