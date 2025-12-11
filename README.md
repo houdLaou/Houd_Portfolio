@@ -30,16 +30,17 @@ Built with **React.js**, it features a modern, responsive design.
 
 ## 💻 Installation & Setup
 
-1-Clone the repository:
-  git clone https://github.com/houdLaou/Houd_Portfolio.git
-2-Navigate into the project folder:
-  cd Houd_Portfolio
-3-Install dependencies:
-  npm install
-4-Start the development server:
-  npm start
-5-Open http://localhost:3000
- in your browser.
+- Clone the repository:
+    git clone https://github.com/houdLaou/Houd_Portfolio.git
+- Navigate into the project folder:
+    cd Houd_Portfolio
+- Install dependencies:
+    npm install
+- Start the development server:
+    npm start
+- Open http://localhost:3000 in your browser.
+
+---
 
 ## 📄 License
 
