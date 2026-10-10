@@ -3,21 +3,37 @@ export default function About(){
     return(
         <div id='about' className="About-section">
             <h1 className='title'>about.</h1>
-            <div className='description'>I’m Houd Laouaoudja, a passionate front-end developer with a solid computer science foundation from <strong>ESI</strong>. 
-            I enjoy transforming ideas into interactive, user-friendly digital experiences using <strong>HTML</strong>, <strong>CSS</strong>, 
-    <strong>JavaScript</strong>, and <strong>React.js</strong>.</div>
+            <div className='description'>
+                I'm <strong>Houd Laouaoudja</strong>, a motivated 3rd-year Computer Science student at{' '}
+                <strong>ESI Algeria</strong> .
+                I have a strong passion for <strong>web development</strong>,
+                and software engineering — building real-world projects that span React web apps,
+                C data structures, and connected embedded systems using ESP32.
+            </div>
             <div className='Detailes'>
                 <ul>
-                    <li className='detaile'>I’ve built projects like a <strong>To-Do List app</strong>, a <strong>Weather website</strong>, 
-                        all emphasizing clean design and smooth interactions. These projects helped me 
-                        refine skills in front-end development, dynamic data handling, and user-centered design.
+                    <li className='detaile'>
+                        <strong>Education:</strong> École Nationale Supérieure d'Informatique (ESI) — Algiers, Algeria.
+                        1st Year - 2nd Cycle Class in Computer Science (1CS) | 2024 – Present.
+                        Relevant coursework: Algorithms, Data Structures (arrays, trees, FIFO/LIFO, linked lists),
+                        File Structures, Mathematics, Logic.
                     </li>
                     <li className='detaile'>
-                        Recently, I’ve started exploring backend development with <strong>Node.js</strong> and <strong>MongoDB/Mongoose</strong>, 
-                        aiming to become a full-stack developer capable of managing both server logic and front-end interfaces. 
-                        For me, web development is a mix of creativity and logic — building meaningful, accessible, and enjoyable digital products.
+                        <strong>Languages &amp; Frameworks:</strong> JavaScript, HTML/CSS, React, Node.js,
+                        Express.js, C, Pascal, Assembly, Java , python.
                     </li>
-                    
+                    {/* 
+                     */}
+                    <li className='detaile'>
+                        <strong>Tools &amp; Platforms:</strong> Git &amp; GitHub, VS Code, Postman,
+                        Home Assistant, n8n, REST APIs, JSON, Supabase.
+                    </li>
+                    <li className='detaile'>
+                        <strong>Soft Skills:</strong> Problem-solving, analytical thinking, teamwork,
+                        adaptability, fast learning. Currently exploring AI-driven analysis and
+                        backend development to contribute to innovative teams through internships
+                        and collaborative projects.
+                    </li>
                 </ul>
             </div>
         </div>

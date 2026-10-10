@@ -1,68 +1,70 @@
-
+/* ===== NAVBAR ===== */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #DAA520;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  transition: background-color 0.3s ease, padding 0.3s ease;
-  padding: 15px 0;
+  box-shadow: 0 1px 0 var(--border);
+  transition: box-shadow var(--transition), padding var(--transition);
+  padding: 14px 0;
 }
 
 .navbar.scrolled {
-  background-color: #DAA520;
+  box-shadow: var(--shadow-sm);
   padding: 10px 0;
 }
-
 
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: min(90%, 1200px);
   margin: auto;
 }
 
-
 .navbar-logo {
-  font-size: 30px;
-  color: #002060;
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(18px, 2.5vw, 24px);
   font-weight: 900;
-  letter-spacing: 1px;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+  white-space: nowrap;
 }
 
+/* ===== DESKTOP NAV LINKS ===== */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
 .nav-links a {
-  margin-left: 30px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
   text-decoration: none;
-  color: #002060;
-  font-weight: bold;
-  font-size: 18px;
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
   position: relative;
-  transition: color 0.3s ease;
+  transition: color var(--transition), background-color var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+  background-color: var(--accent-light);
 }
 
 .nav-links a.active {
-  color: #ff4500;
+  color: var(--accent);
+  background-color: var(--accent-light);
 }
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  background: #002060;
-  bottom: -5px;
-  left: 0;
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
+/* ===== HAMBURGER BUTTON ===== */
 .menu-btn {
   display: none;
   flex-direction: column;
@@ -73,38 +75,39 @@
   border: none;
   cursor: pointer;
   padding: 0;
+  z-index: 1100;
 }
 
 .menu-btn span {
   display: block;
-  height: 3px;
+  height: 2.5px;
   width: 100%;
-  background: #002060;
+  background: var(--text-primary);
   border-radius: 2px;
   transition: all 0.3s ease;
 }
-
 
 .menu-btn.open span:nth-child(1) {
   transform: rotate(45deg) translate(6px, 5px);
 }
 .menu-btn.open span:nth-child(2) {
   opacity: 0;
+  transform: scaleX(0);
 }
 .menu-btn.open span:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -5px);
 }
 
-
+/* ===== MOBILE MENU ===== */
 .mobile-menu {
   display: flex;
   flex-direction: column;
-  background-color: #DAA520;
+  background-color: rgba(255, 255, 255, 0.98);
   width: 100%;
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.45s ease;
-  border-bottom: 2px solid rgba(0,0,0,0.1);
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-bottom: 1px solid var(--border);
 }
 
 .mobile-menu.open {
@@ -113,13 +116,20 @@
 
 .mobile-menu a {
   opacity: 0;
-  transform: translateY(-15px);
-  padding: 15px 0;
+  transform: translateY(-10px);
+  padding: 14px 5%;
   text-decoration: none;
-  color: #002060;
-  font-weight: bold;
-  text-align: center;
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  transition: opacity 0.3s ease, transform 0.3s ease, color var(--transition), background-color var(--transition);
+}
+
+.mobile-menu a:last-child {
+  border-bottom: none;
 }
 
 .mobile-menu.open a {
@@ -127,24 +137,17 @@
   transform: translateY(0);
 }
 
-.mobile-menu a.active {
-  color: #ff4500;
+.mobile-menu a.active,
+.mobile-menu a:hover {
+  color: var(--accent);
+  background-color: var(--accent-light);
 }
 
 .mobile-separator {
-  width: 80%;
-  height: 2px;
-  background-color: #002060;
-  opacity: 0;
-  margin: 10px auto;
-  transition: opacity 0.3s ease;
+  display: none;
 }
 
-.mobile-menu.open .mobile-separator {
-  opacity: 0.6;
-}
-
-
+/* ===== RESPONSIVE ===== */
 @media (max-width: 750px) {
   .nav-links {
     display: none;

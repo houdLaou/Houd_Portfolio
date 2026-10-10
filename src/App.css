@@ -1,11 +1,5 @@
 .App-header {
-  background-color: #fbf8cc;
+  background-color: var(--bg);
   font-weight: normal;
-  color: #03045E;
-
+  color: var(--text-primary);
 }
-html{
-  scroll-behavior: smooth;
-}
-
-
